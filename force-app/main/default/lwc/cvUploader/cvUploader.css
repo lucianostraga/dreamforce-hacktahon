@@ -1,0 +1,179 @@
+:host {
+    --color-teal: #17A2B8;
+    --color-coral: #FF6B6B;
+    --color-orange: #FFA500;
+    --color-purple: #8B4F9F;
+    --color-white: #ffffff;
+    --color-gray-light: #f8f9fa;
+    --color-gray: #6c757d;
+    --color-gray-dark: #343a40;
+}
+
+.recruit-ai-header {
+    width: 100%;
+    background: linear-gradient(135deg, var(--color-teal) 0%, var(--color-coral) 100%);
+    min-height: 100vh;
+}
+
+.resume-analyzer-section {
+    padding: 4rem 2rem;
+    background: transparent;
+    min-height: 100vh;
+}
+
+.analyzer-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 3rem;
+    color: var(--color-white);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.analyzer-content {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 3rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.upload-area {
+    text-align: center;
+    padding: 3rem;
+    border: 3px dashed rgba(255, 107, 107, 0.5);
+    border-radius: 15px;
+    background: linear-gradient(135deg, rgba(23, 162, 184, 0.1), rgba(255, 107, 107, 0.1));
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.upload-area:hover {
+    border-color: var(--color-coral);
+    background: linear-gradient(135deg, rgba(23, 162, 184, 0.2), rgba(255, 107, 107, 0.2));
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(255, 107, 107, 0.2);
+}
+
+.upload-area h3 {
+    color: var(--color-gray-dark);
+    font-size: 1.5rem;
+    margin: 1rem 0;
+}
+
+.upload-area p {
+    color: var(--color-gray);
+    margin-bottom: 2rem;
+}
+
+.upload-area lightning-input {
+    margin: 1.5rem auto;
+    max-width: 300px;
+}
+
+.analyze-button {
+    background: linear-gradient(135deg, var(--color-teal), var(--color-coral));
+    color: var(--color-white);
+    padding: 1rem 3rem;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+    box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+}
+
+.analyze-button:hover:not(:disabled) {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(255, 107, 107, 0.5);
+    background: linear-gradient(135deg, var(--color-coral), var(--color-teal));
+}
+
+.analyze-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.upload-area.drag-over {
+    border-color: var(--color-coral);
+    background: linear-gradient(135deg, rgba(255, 107, 107, 0.25), rgba(23, 162, 184, 0.25));
+    box-shadow: 0 0 20px rgba(255, 107, 107, 0.3);
+}
+
+.file-info {
+    background: linear-gradient(135deg, rgba(23, 162, 184, 0.1), rgba(255, 107, 107, 0.1));
+    border: 1px solid rgba(23, 162, 184, 0.3);
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 1rem auto;
+    max-width: 400px;
+}
+
+.file-name {
+    color: var(--color-gray-dark);
+    font-weight: 600;
+    margin: 0.5rem 0;
+}
+
+.file-size {
+    color: var(--color-gray);
+    font-size: 0.9rem;
+    margin: 0.5rem 0;
+}
+
+.loading-container {
+    text-align: center;
+    padding: 5rem 2rem;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.loading-text {
+    color: var(--color-gray-dark);
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-top: 2rem;
+    background: linear-gradient(135deg, var(--color-teal) 0%, var(--color-coral) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.loading-subtext {
+    color: var(--color-gray);
+    font-size: 1.2rem;
+    margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .analyzer-content {
+        padding: 1.5rem;
+    }
+
+    .upload-area {
+        padding: 2rem 1rem;
+    }
+
+    .loading-text {
+        font-size: 2rem;
+    }
+
+    .loading-subtext {
+        font-size: 1rem;
+    }
+}

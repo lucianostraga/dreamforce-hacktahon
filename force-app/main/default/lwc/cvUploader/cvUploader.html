@@ -1,0 +1,46 @@
+<template>
+    <div class="recruit-ai-header">
+        <section class="resume-analyzer-section">
+            <div class="analyzer-container">
+                <template if:false={isAnalyzing}>
+                    <h2 class="section-title">Recruit AI - Resume Analyzer</h2>
+                    <div class="analyzer-content">
+                        <div class="upload-area" ondragover={handleDragOver} ondragleave={handleDragLeave} ondrop={handleDrop}>
+                            <template if:true={isProcessing}>
+                                <lightning-spinner alternative-text="Processing file" size="medium"></lightning-spinner>
+                            </template>
+                            <template if:false={isProcessing}>
+                                <lightning-icon icon-name="doctype:pdf" size="x-large"></lightning-icon>
+                                <h3>Upload Your Resume</h3>
+                                <p>{uploadLabel}</p>
+                                <template if:true={hasFile}>
+                                    <div class="file-info">
+                                        <p class="file-name">File: {fileName}</p>
+                                        <p class="file-size">Size: {fileSize}</p>
+                                    </div>
+                                </template>
+                                <lightning-input
+                                    type="file"
+                                    label="Select Resume"
+                                    accept=".pdf,.doc,.docx"
+                                    variant="label-hidden"
+                                    onchange={handleFileChange}>
+                                </lightning-input>
+                                <button class="analyze-button" onclick={handleAnalyze} disabled={isProcessing}>
+                                    Analyze Resume
+                                </button>
+                            </template>
+                        </div>
+                    </div>
+                </template>
+                <template if:true={isAnalyzing}>
+                    <div class="loading-container">
+                        <lightning-spinner alternative-text="Analyzing" size="large"></lightning-spinner>
+                        <h2 class="loading-text">Analyzing Resume...</h2>
+                        <p class="loading-subtext">Please wait while we process your document</p>
+                    </div>
+                </template>
+            </div>
+        </section>
+    </div>
+</template>
